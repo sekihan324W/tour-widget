@@ -15,7 +15,7 @@ $dir = get_template_directory();
 add_action( 'widgets_init', function () {
 	register_widget( 'My_Widget' );  //WidgetをWordPressに登録する
   register_sidebar( array(  //「サイドバー」を登録する
-		'name'          => 'OUR TOUR 1',
+		'name'          => 'OUR TEAM 1',
 		'id'            => 'my_sidebar_1',
 		'before_widget' => '<div class="tourlist">',
 		'after_widget'  => '</div>',
@@ -23,25 +23,25 @@ add_action( 'widgets_init', function () {
 		'after_title'   => '',
   ) );
   register_sidebar( array(  //「サイドバー」を登録する
-		'name'          => 'OUR TOUR 2',
+		'name'          => 'OUR TEAM 2',
 		'id'            => 'my_sidebar_2',
-		'before_widget' => '<div class="tourlist">',
+		'before_widget' => '<div>',
 		'after_widget'  => '</div>',
 		'before_title'  => '',
 		'after_title'   => '',
   ) );
   register_sidebar( array(  //「サイドバー」を登録する
-		'name'          => 'OUR TOUR 3',
+		'name'          => 'OUR TEAM 3',
 		'id'            => 'my_sidebar_3',
-		'before_widget' => '<div class="tourlist">',
+		'before_widget' => '<div>',
 		'after_widget'  => '</div>',
 		'before_title'  => '',
 		'after_title'   => '',
   ) );
   register_sidebar( array(  //「サイドバー」を登録する
-		'name'          => 'OUR TOUR 4',
+		'name'          => 'OUR TEAM 4',
 		'id'            => 'my_sidebar_4',
-		'before_widget' => '<div class="tourlist">',
+		'before_widget' => '<div>',
 		'after_widget'  => '</div>',
 		'before_title'  => '',
 		'after_title'   => '',
@@ -58,8 +58,8 @@ class My_Widget extends WP_Widget{
 	function __construct() {
 		parent::__construct(
 			'my_widget', // Base ID
-			'ツアー写真', // Name
-			array( 'description' => 'ツアーの紹介', ) // Args
+			'スタッフ写真', // Name
+			array( 'description' => 'スタッフの紹介', ) // Args
 		);
 	}
 
@@ -107,15 +107,15 @@ class My_Widget extends WP_Widget{
         $team_rol_id = $this->get_field_id('team_rol');
  ?>
         <p>
-            <label for="<?php echo $team_img_id; ?>">ツアー写真:</label>
+            <label for="<?php echo $team_img_id; ?>">スタッフ写真:</label>
             <input class="widefat" id="<?php echo $team_img_id; ?>" name="<?php echo $team_img_name; ?>" type="text" value="<?php echo esc_attr( $team_img ); ?>">
         </p>
         <p>
-            <label for="<?php echo $team_name_id; ?>">ツアー名:</label>
+            <label for="<?php echo $team_name_id; ?>">スタッフ名:</label>
             <input class="widefat" id="<?php echo $team_name_id; ?>" name="<?php echo $team_name_name; ?>" type="text" value="<?php echo esc_attr( $team_name ); ?>">
         </p>
         <p>
-            <label for="<?php echo $team_rol_id; ?>">キャッチ:</label>
+            <label for="<?php echo $team_rol_id; ?>">所属:</label>
             <input class="widefat" id="<?php echo $team_rol_id; ?>" name="<?php echo $team_rol_name; ?>" type="text" value="<?php echo esc_attr( $team_rol ); ?>">
         </p>
  <?php
