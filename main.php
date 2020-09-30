@@ -76,7 +76,7 @@ class My_Widget extends WP_Widget{
     $team_rol = $instance['team_rol'];
 		echo $args['before_widget'];
 
-        echo '<img width="270" height="270" src="',$uri,'/images/pages/',$team_img,'" alt=""/></a> ';
+        echo '<div class="team"><a href="./"><img width="270" height="270" src="',$uri,'/images/pages/',$team_img,'" alt=""/></a></div>';
         echo '
         <div class="thumbnail-desc">
         <h5 class="thumbnail-josip-title text-bold text-white">',$team_name,'</h5>
